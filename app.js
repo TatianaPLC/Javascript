@@ -109,11 +109,12 @@ if(calificacion < 3.0){
 */
 
 //Ejercicio de generaciones
-
+/*
 let anio;
 
 anio = parseInt(prompt("Ingrese su año de nacimiento"));
-
+*/
+/*
 if (anio >= 1883 && anio <= 1900){
     console.log("¡Perteneces a la generación perdida!");
 }else if(anio >= 1901 && anio <= 1924){
@@ -133,3 +134,74 @@ if (anio >= 1883 && anio <= 1900){
 }else {
     console.log("No haces parte de ninguna generación registrada");
 }
+*/
+
+//Operador ternario
+/*
+let edad = 18;
+let res = (edad >= 18)? "Es mayor de edad" : "Es menor de edad";
+console.log(res);
+*/
+//Estructura case
+/*
+let dia = 5;
+
+switch(dia){
+    case 1: console.log("Es Lunes");
+    break;
+    case 2: console.log("Es Martes");
+    break;
+    case 3: console.log("Es Miercoles");
+    break;
+    case 4: console.log("Es Jueves");
+    break;
+    case 5: console.log("Es Viernes");
+    break;
+    case 6: console.log("Es Sabado");
+    break;
+    case 7: console.log("Es Domingo");
+    break;
+    default: console.log("El día no existe");
+}
+*/
+//Otro ejemplo del switch
+/*
+let operador = "+";
+switch (operador){
+    case "+": console.log("Es una suma");
+    break;
+    case "-": console.log("Es una suma");
+    break;
+    case "*": console.log("Es una suma");
+    break;
+    case "/": console.log("Es una suma");
+    break;
+    default: console.log("Operación no existe");
+}
+*/
+
+//Ejercicio del switch case
+let dolar = 4280;
+let euro = 4728;
+let libraEsterlina = 5601;
+
+let valor = parseInt(prompt("Ingrese el valor que requiere convertir"));
+let divisa = prompt("Registre el D para convertir en dolar, E para convertir en Euro y L para convertir en Libra Esterlina");
+let conversion;
+
+switch (divisa){
+    case "D": 
+        conversion = valor/dolar;
+        console.log(`El valor ${valor} en dolares corresponde a: ${conversion}`);
+    break;
+    case "E":
+        conversion = valor/euro;
+        console.log(`El valor ${valor} en euros corresponde a: ${conversion}`);
+    break;
+    case "L": 
+        conversion = valor * libraEsterlina;
+        console.log(`El valor ${valor} en Libras Esterlinas corresponde a: ${conversion}`);
+    break;
+    default: console.log("No se ingreso una conversión válida");
+}
+
