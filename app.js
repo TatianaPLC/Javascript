@@ -2,9 +2,10 @@
 /* 
 Comentario de varias lineas 
 */
-console.log("Hola Mundo");
+/*console.log("Hola Mundo");*/
 
 //Variables
+/*
 let numero1 = 45;
 let numero2 = 39;
 const pi = 3.1415;
@@ -14,6 +15,7 @@ numero3 = 125;
 let direccion = "calle 7 sur 18"
 let suma, resta, multiplicacion, mod, division;
 let nulo = null;
+*/
 
 //Imprimiendo variables
 /*
@@ -181,6 +183,7 @@ switch (operador){
 */
 
 //Ejercicio del switch case
+/*
 let dolar = 4280;
 let euro = 4728;
 let libraEsterlina = 5601;
@@ -203,5 +206,149 @@ switch (divisa){
         console.log(`El valor ${valor} en Libras Esterlinas corresponde a: ${conversion}`);
     break;
     default: console.log("No se ingreso una conversión válida");
+}
+*/
+//Estructuras repetitivas con for
+//Incremento
+/*
+for (let i = 1; i<=10; i++){
+    console.log(i);
+}
+*/
+//De 3 en 3
+/*
+for (let i = 3; i<=30; i+=3){
+    console.log(i);
+}
+*/
+//Decremento
+/*
+for (let i=10; i>= 1; i--){
+    console.log(i);
+}
+*/
+//Decremento de 2 en 2, desde 30 hasta 1
+/*
+for (i=30; i>=1; i-=2){
+    console.log(i);
+}
+*/
+//Tabla del 6
+/*
+let tabla = 6;
+for (let i = 1; i <= 10; i++){
+    console.log(`${tabla} x ${i} = ${(tabla*i)}`);
+}
+*/
+//La tabla que yo quiera
+/*
+let tabla = parseInt(prompt("Ingrese el número de la tabla que quiere consultar"));
+
+for (let i = 1; i <= 10; i++){
+    console.log(`${tabla} x ${i} = ${(tabla*i)}`);
+}
+*/
+//Ejercicio del restaurante - switch case
+/*
+let menu = prompt("Registre C para Carne, P para Pescado y E para Ensalada");
+menu=menu.toUpperCase();
+switch (menu){
+    case "C": 
+        console.log(`¿Desea beber vinotinto?`);
+    break;
+    case "P":
+        console.log(`¿Desea beber vinoblanco?`);
+    break;
+    case "E": 
+        console.log(`¿Desea beber agua?`);
+    break;
+    default: console.log("¡Elija carne, pescado o ensalada!");
+}
+*/
+//Ejercicio de las estaciones - switch case
+/*
+let estacion = parseInt(prompt("Registre el número del mes (1 al 12) para conocer su estación"));
+
+switch (estacion){
+    case 12: 
+    case 1: 
+    case 2: 
+        console.log(`En este mes la estación será Invierno`);
+    break;
+    case 3: 
+    case 4:
+    case 5:
+        console.log(`En este mes la estación será Primavera`);
+    break;
+    case 6:
+    case 7:
+    case 8: 
+        console.log(`En este mes la estación será Verano`);
+    break;
+    case 9:
+    case 10:
+    case 11: 
+        console.log(`En este mes la estación será Otoño`);
+    break;
+    case 3: 
+        console.log(`En este mes la estación será Primavera`);
+    break;
+    default: console.log("¡Digite un número de mes válido entre el 1 y el 12!");
+}
+*/
+//Ejercicio de la sala de juegos - switch case
+/*En una sala de juegos existen cuatro salas: Consolas, Juegos 2D, Juegos 3D y Realidad Virtual.
+Si un usuario paga 4 créditos puede acceder a todas, si paga 3 solo podrá acceder a las tres primeras,
+Si paga 2 a las dos primeras y si paga 1 solo a la primera sala.
+Tecleo que pago 2 créditos, el script me dirá que puedo acceder a las salas de consola y juegos 2D.*/
+/*
+let creditos = parseInt(prompt("Registre el número de créditos que desea pagar"));
+
+switch (creditos){
+    case 4:  
+        console.log(`Puedes acceder a todas las salas (Consolas, Juegos 2D, Juegos 3D y Realidad Virtual)`);
+    break;
+    case 3:
+        console.log(`Puedes acceder a las siguientes salas (Consolas, Juegos 2D, Juegos 3D)`);
+    break;
+    case 2:
+        console.log(`Puedes acceder a las siguientes salas (Consolas, Juegos 2D)`);
+    break;
+    case 1:
+        console.log(`Puedes acceder a las siguientes salas (Consolas)`);
+    break;
+    default: console.log("¡Solo puedes pagar minimo 1 crédito y máximo 4 créditos!");
+}
+*/
+
+/* Un comerciante hace descuentos a sus clientes de la siguiente forma:
+Si ha comprado menos de 100 mil pesos no hay descuento
+Si la compra está entre 100 mil y 300 mil pesos le descuenta un 5%
+Si la compra está por encima de 300 mil hasta 500 mil pesos le descuenta un 10%
+Si la compra supera los 500 mil pesos le descuenta un 15%
+Es decir: hago una compra de 150 mil: pago 150000 - 5% de 150000, o sea 142,500 pesos.*/
+
+let compras = prompt("Registre el valor total en pesos que debe pagar el cliente");
+let descuento;
+let total;
+
+switch (true){
+    case compras <100000:  
+        total = compras;
+        alert(`El cliente no recibe descuento, debe pagar: ${total}`);
+    break;
+    case compras >=100000 && compras <= 300000:
+        total = compras - (compras * 0.05);
+        alert(`El cliente recibe 5% descuento, debe pagar: ${total}`);
+    break;
+    case compras >300 && compras <=500:
+        total = compras - (compras * 0.10);
+        alert(`El cliente recibe 10% descuento, debe pagar: ${total}`);
+    break;
+    case compras >500:
+        total = compras - (compras * 0.15);
+        alert(`El cliente recibe 15% descuento, debe pagar: ${total}`);
+    break;
+    default: console.log("¡Debe registrar un valor a pagar válido mayor que 0!");
 }
 
