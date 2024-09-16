@@ -327,7 +327,7 @@ Si la compra está entre 100 mil y 300 mil pesos le descuenta un 5%
 Si la compra está por encima de 300 mil hasta 500 mil pesos le descuenta un 10%
 Si la compra supera los 500 mil pesos le descuenta un 15%
 Es decir: hago una compra de 150 mil: pago 150000 - 5% de 150000, o sea 142,500 pesos.*/
-
+/*
 let compras = prompt("Registre el valor total en pesos que debe pagar el cliente");
 let descuento;
 let total;
@@ -351,4 +351,40 @@ switch (true){
     break;
     default: console.log("¡Debe registrar un valor a pagar válido mayor que 0!");
 }
+*/
+
+//Ejercicio 2 sumas los valores de I
+/*
+let n= parseInt(prompt("Introduce un número positivo: "));
+let sum= 0;
+
+for (let i = 1; i <= n; i++){
+    sum +=i;
+}
+console.log(`La suma de los números del 1 al ${n} es: ${sum}`);
+*/
+
+//Otro ejercicio con tablas de multiplicar - for
+/*
+let t;
+
+for (let t = 1; t <= 10; t++){
+    console.log(`La tabla del ${t} es: `);
+    for (let i = 1; i <= 10; i++){
+        console.log(`${t} x ${i} = ${(t*i)}`);
+    }
+}
+*/
+
+//Imprimir la suma de los primeros 100 números impares
+let suma=0;
+for (let i = 1; i <=200; i+=2){
+    console.log(`el valor es: ${i}`);
+    suma += i;
+}
+console.log(`La suma de los primeros 100 números impares es: ${suma}`);
+
+
+
+
 
