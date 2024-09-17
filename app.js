@@ -377,14 +377,37 @@ for (let t = 1; t <= 10; t++){
 */
 
 //Imprimir la suma de los primeros 100 números impares
+/*
 let suma=0;
 for (let i = 1; i <=200; i+=2){
     console.log(`el valor es: ${i}`);
     suma += i;
 }
 console.log(`La suma de los primeros 100 números impares es: ${suma}`);
+*/
+//Ciclo While
+/*
+let numero = 1;
+while(numero <= 10){
+    console.log(numero);
+    numero++;
+}
+*/
 
+//Sumar numeros positivos
+let n = 1;
+let sum = 0;
 
+while(n > 0){
+    n = parseInt(prompt("Ingrese un número positivo para sumarlos e ingrese un número negativo para salir"));
+    sum += n;
+    
+    if (n < 0){
+        sum -= n;
+    }
+    console.log(`La suma: ${sum}`);
+}
+console.log(`Lo que suman los números ingresados es: ${sum}`);
 
 
 
