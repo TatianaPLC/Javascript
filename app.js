@@ -395,6 +395,7 @@ while(numero <= 10){
 */
 
 //Sumar numeros positivos
+/*
 let n = 1;
 let sum = 0;
 
@@ -408,6 +409,81 @@ while(n > 0){
     console.log(`La suma: ${sum}`);
 }
 console.log(`Lo que suman los números ingresados es: ${sum}`);
+*/
 
+//Desarrollar menú de opiciones
+/*
+let opcion;
+let estado = true;
+let coseno, seno, raiz, numero;
+*/
+/*
+Opciones para realizar un calculo matematico
+1. Raiz
+2. Seno
+3. Coseno
+*/
+/*
+while(estado){
+opcion = (parseInt(prompt(`Seleccione una opción \n 1. Raiz \n 2. Seno de N1 \n 3. Coseno de N1 \n 4. Salir`)));
 
+switch(opcion){
+    case 1: alert("Seleccionó Raiz");
+    numero = (parseFloat(prompt(`Ingrese el número para calcular la raiz`)));
+    raiz = Math.sqrt(numero);
+    alert(`La raiz de ${numero} es: ${raiz}`);
+    break;
+
+    case 2: alert("Seleccionó Seno de N1");
+    numero = (parseFloat(prompt(`Ingrese el número para calcular el seno`)));
+    seno = Math.sin(numero);
+    alert(`El seno de ${numero} es: ${seno}`);
+    break;
+
+    case 3: alert("Seleccionó coseno de N1");
+    numero = (parseFloat(prompt(`Ingrese el número para calcular el coseno`)));
+    seno = Math.cos(numero);
+    alert(`El coseno de ${numero} es: ${coseno}`);
+    break;
+
+    case 4: alert("Seleccionó Salir");
+    estado = falso;
+    break;
+
+    default:
+        alert("La opción seleccionada no es válida");
+}
+}
+*/
+
+//Adivinar un número generado aleatoriamente
+/* 
+1. Generar un número aleatorio del 1 al 50
+2. Solicitar al usuario un número
+3. Si el numero ingresado no es igual al número generado, mostrar "El número generado es mayor a x" o 
+"El número generado es menor a x"
+4. Si el numero ingresado es igual al generado, mostrar "Adivinaste"
+*/
+let aleatorio = Math.floor(Math.random() * 50) + 1;
+let estado = true;
+let numero;
+let contador = 0;
+
+while(estado){
+    alert(`El número es: ${aleatorio}`);
+    numero = (parseInt(prompt(`¡Adivine el número del 0 a 50!, ingrese el número para intentarlo.`)));
+    
+    if(numero<0 || numero>50 || isNaN(numero)){
+        alert(`¡Ingresaste un número inválido!, vuelve a intentarlo.`);
+        
+    } else if (numero<aleatorio){
+        alert(`¡El número a advinar es mayor al número ingresado!, sigue intentando.`);
+    } else if (numero>aleatorio){
+        alert(`¡El número a adivinar es menor al número ingresado!, sigue intentando.`);
+    } else if (numero==aleatorio){
+        alert(`¡Genial!, adivinaste el número, lo intentaste ${contador} veces antes de adivinarlo.`);
+        estado=false;
+    }
+    contador +=1;
+}
 
