@@ -464,6 +464,7 @@ switch(opcion){
 "El número generado es menor a x"
 4. Si el numero ingresado es igual al generado, mostrar "Adivinaste"
 */
+/*
 let aleatorio = Math.floor(Math.random() * 50) + 1;
 let estado = true;
 let numero;
@@ -475,7 +476,6 @@ while(estado){
     
     if(numero<0 || numero>50 || isNaN(numero)){
         alert(`¡Ingresaste un número inválido!, vuelve a intentarlo.`);
-        
     } else if (numero<aleatorio){
         alert(`¡El número a advinar es mayor al número ingresado!, sigue intentando.`);
     } else if (numero>aleatorio){
@@ -486,4 +486,115 @@ while(estado){
     }
     contador +=1;
 }
+*/
+// Do While
 
+//Calculo del area de un circulo, cuadrado, y un triangulo
+// Area circulo A = pi * r*r, Area del cuadrado A = lado * lado, Area del triangulo A = B * H /2
+/*
+let ac, acu, at;
+let r, lado, b, h;
+let opcion;
+const pi = 3.1416;
+let estado=true;
+
+do {
+    opcion = parseInt(prompt(`1. Área del circulo \n 2. Área del cuadrado \n Área del triangulo`));
+
+    switch(opcion){
+        case 1: alert ("Area del circulo");
+        r = parseFloat(prompt(`Ingrese el valor del radio`));
+        ac = pi * (r*r);
+        alert (`El área del circulo es: ${ac}`);
+        break;
+
+        case 2: alert ("Area del Cuadrado");
+        lado = parseFloat(prompt(`Ingrese el valor del lado`));
+        acu = (lado*lado);
+        alert (`El área del cuadrado es: ${acu}`);
+        break;
+
+        case 3: alert ("Area del Triangulo");
+        b = parseFloat(prompt(`Ingrese el valor de la base`));
+        h = parseFloat(prompt(`Ingrese el valor de la altura`));
+        at = (b*h)/2;
+        alert (`El área del triangulo es: ${at}`);
+        break;
+
+        case 4: alert ("Saliendo");
+        estado = false;
+        break;
+
+        default:
+            alert ("Opción no válida")
+    }
+} while(estado);
+*/
+// Conversiones Temperaturas
+/*
+De kelvin a Celsius C = K - 273.15
+De Kelvin a Farenheit F = ((9*(K - 273.15)) / 5) + 32
+De Farenheit a Celsius C = (5*(F - 32)) / 9
+De Farenheit a Kelvin K = ((5*(F - 32)) / 9) + 273.15
+De Celsius a Kelvin K = C + 273.15
+De Celsius a Farenheit F = ((9 * C) / 5) + 32
+*/
+let c, k, f;
+let opcion;
+let estado=true;
+
+do {
+    opcion = parseInt(prompt(`Conversor de Temperaturas, digíte una de las siguientes opciones: 
+        \n 1 para convertir de kelvin a Celsius
+        \n 2 para convertir de Kelvin a Farenheit
+        \n 3 para convertir de Farenheit a Celsius
+        \n 4 Para convertir de Farenheit a Kelvin
+        \n 5 Para convertir de Celsius a Kelvin
+        \n 6 Para convertir de Celsius a Farenheit
+        \n 7 Para salir`));
+
+    switch(opcion){
+        case 1: alert ("Convertir de kelvin a Celsius");
+        k = parseFloat(prompt(`Ingrese el valor en Kelvin que quiere convertir a Celsius`));
+        c = k - 273.15;
+        alert (`El valor ${k} en Kelvin equivale a ${c} Celsius`);
+        break;
+
+        case 2: alert ("Convertir de Kelvin a Farenheit");
+        k = parseFloat(prompt(`Ingrese el valor en Kelvin que quiere convertir a Farenheit`));
+        f = ((9*(k - 273.15)) / 5) + 32;
+        alert (`El valor ${k} en Kelvin equivale a ${f} Farenheit`);
+        break;
+
+        case 3: alert ("Convertir de Farenheit a Celsius");
+        f = parseFloat(prompt(`Ingrese el valor en Farenheit que quiere convertir a Celsius`));
+        c = (5*(f - 32)) / 9;
+        alert (`El valor ${f} en Farenheit equivale a ${c} Celsius`);
+        break;
+
+        case 4: alert ("Convertir de Farenheit a Kelvin");
+        f = parseFloat(prompt(`Ingrese el valor en Farenheit que quiere convertir a Kelvin`));
+        k = ((5*(f - 32)) / 9) + 273.15;
+        alert (`El valor ${f} en Farenheit equivale a ${k} Kelvin`);
+        break;
+
+        case 5: alert ("Convertir de Celsius a Kelvin");
+        c = parseFloat(prompt(`Ingrese el valor en Celsius que quiere convertir a Kelvin`));
+        k = c + 273.15;
+        alert (`El valor ${c} en Celsius equivale a ${k} Kelvin`);
+        break;
+
+        case 6: alert ("Convertir de Celsius a Farenheit");
+        c = parseFloat(prompt(`Ingrese el valor en Celsius que quiere convertir a Farenheit`));
+        f = ((9 * c) / 5) + 32;
+        alert (`El valor ${c} en Celsius equivale a ${f} Farenheit`);
+        break;
+
+        case 7: alert ("Saliendo...");
+        estado = false;
+        break;
+
+        default:
+            alert ("Opción no válida")
+    }
+} while(estado);
