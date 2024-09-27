@@ -659,31 +659,32 @@ console.log(`El cuadrado es ${exponente(a,b)}`);
 */
 
 //Conversiones con funciones
+/*
 let c, k, f;
 let opcion;
 let estado=true;
 
-function kelvincelsius(k){
+function kelvinCelsius(k){
     return c = k - 273.15;
 }
 
-function kelvinfarenheit(k){
+function kelvinFarenheit(k){
     return f = ((9*(k - 273.15)) / 5) + 32;
 }
 
-function farenheitcelsius(f){
+function farenheitCelsius(f){
     return c = (5*(f - 32)) / 9;
 }
 
-function farenheitkelvin(f){
+function farenheitKelvin(f){
     return k = ((5*(f - 32)) / 9) + 273.15;
 }
 
-function celsiuskelvin(c){
+function celsiusKelvin(c){
     return k = c + 273.15;
 }
 
-function celsiusfarenheit(c){
+function celsiusFarenheit(c){
     return f = ((9 * c) / 5) + 32;
 }
 
@@ -700,32 +701,32 @@ do {
     switch(opcion){
         case 1: alert ("Convertir de kelvin a Celsius");
         k = parseFloat(prompt(`Ingrese el valor en Kelvin que quiere convertir a Celsius`));
-        alert (`El valor ${k} en Kelvin equivale a ${kelvincelsius(k)} Celsius`);
+        alert (`El valor ${k} en Kelvin equivale a ${kelvinCelsius(k)} Celsius`);
         break;
 
         case 2: alert ("Convertir de Kelvin a Farenheit");
         k = parseFloat(prompt(`Ingrese el valor en Kelvin que quiere convertir a Farenheit`));
-        alert (`El valor ${k} en Kelvin equivale a ${kelvinfarenheit(k)} Farenheit`);
+        alert (`El valor ${k} en Kelvin equivale a ${kelvinFarenheit(k)} Farenheit`);
         break;
 
         case 3: alert ("Convertir de Farenheit a Celsius");
         f = parseFloat(prompt(`Ingrese el valor en Farenheit que quiere convertir a Celsius`));
-        alert (`El valor ${f} en Farenheit equivale a ${farenheitcelsius(f)} Celsius`);
+        alert (`El valor ${f} en Farenheit equivale a ${farenheitCelsius(f)} Celsius`);
         break;
 
         case 4: alert ("Convertir de Farenheit a Kelvin");
         f = parseFloat(prompt(`Ingrese el valor en Farenheit que quiere convertir a Kelvin`));
-        alert (`El valor ${f} en Farenheit equivale a ${farenheitkelvin(f)} Kelvin`);
+        alert (`El valor ${f} en Farenheit equivale a ${farenheitKelvin(f)} Kelvin`);
         break;
 
         case 5: alert ("Convertir de Celsius a Kelvin");
         c = parseFloat(prompt(`Ingrese el valor en Celsius que quiere convertir a Kelvin`));
-        alert (`El valor ${c} en Celsius equivale a ${celsiuskelvin(c)} Kelvin`);
+        alert (`El valor ${c} en Celsius equivale a ${celsiusKelvin(c)} Kelvin`);
         break;
 
         case 6: alert ("Convertir de Celsius a Farenheit");
         c = parseFloat(prompt(`Ingrese el valor en Celsius que quiere convertir a Farenheit`));
-        alert (`El valor ${c} en Celsius equivale a ${celsiusfarenheit(c)} Farenheit`);
+        alert (`El valor ${c} en Celsius equivale a ${celsiusFarenheit(c)} Farenheit`);
         break;
 
         case 7: alert ("Saliendo...");
@@ -736,3 +737,90 @@ do {
             alert ("Opción no válida")
     }
 } while(estado);
+*/
+
+// Función Tradicional
+/*
+
+function multiplicacion (a,b){
+    return a*b;
+}
+console.log(multiplicacion(8,5));
+*/
+// Función Flecha
+/*
+let multiplicacion1 =(a, b) => {
+    a * b;
+}
+
+console.log(multiplicacion1(8,5));
+*/
+// Forma 2
+/*
+let multiplicacion2 = (a,b) => a*b;
+console.log(multiplicacion2(8,5));
+*/
+//Otro ejercicio
+/*
+let raiz = (numero) => Math.sqrt(numero);
+*/
+
+// Arreglos
+/*
+let estudiantes = ["Laura", "Oscar", "Juliana", "Rosa", "Jaime"];
+console.log(estudiantes);
+*/
+//Añadir un elemento al final del arreglo
+/*
+console.log(estudiantes.push("Ricardo"));
+console.log(estudiantes);
+*/
+//Añadir un elemento al inicio del arreglo
+/*
+console.log(estudiantes.unshift("Gabriel"));
+console.log(estudiantes);
+*/
+//Añadir un elemento en alguna posición en específico (posición, un 0 si no quiero borrar ni reemplazar nada, el valor a agregar)
+/*
+console.log(estudiantes.splice(2, 0, "Sofia"));
+console.log(estudiantes);
+*/
+//Eliminar el último elemento
+/*
+console.log(estudiantes.pop());
+console.log(estudiantes);
+*/
+//Eliminar el primer elemento
+/*
+console.log(estudiantes.shift());
+console.log(estudiantes);
+*/
+//Eliminar elemento en una posición (Posición, número de elementos que quiero eliminar a partir de dicha posición)
+/*
+console.log(estudiantes.splice(2,1));
+console.log(estudiantes);
+*/
+//Conocer la posición de un elemento
+/*
+console.log(estudiantes.indexOf("Juliana"));
+console.log(estudiantes);
+*/
+//Recorrer el arreglo - el for each me permite hacer acciones sobre cada elemento del arreglo
+/*
+estudiantes.forEach((est)=>{
+    if(est = estudiantes[3]){
+        console.log(est);
+    }
+});
+*/
+//Ejercicio 2
+/*
+let vector = [];
+vector[0]=15;
+vector[1]=12;
+vector[2]=20;
+
+vector.forEach((i)=>{
+    console.log(i);
+});
+*/
