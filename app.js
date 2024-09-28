@@ -824,3 +824,93 @@ vector.forEach((i)=>{
     console.log(i);
 });
 */
+
+//Practicando arreglos
+/*
+let vector = [];
+*/
+//Recorrer para llenarlo
+/*
+for (let i=0; i < 5; i++){
+    vector.push(i+1);
+}
+*/
+//Recorrerlo para mostrar su información
+/*
+for (let i=0; i <5; i++){
+    console.log(vector[i]);
+}
+*/
+/*
+let numeros = [12, 23, 18, 16, 19];
+let suma = 0;
+*/
+//For tradicional
+/*
+for (let i=0; i < numeros.length; i++){
+    suma += numeros(i);
+}
+console.log(`La suma es: ${suma}`);
+*/
+//For each
+/*
+numeros.forEach((nu) => {
+    suma += nu;
+});
+console.log(`La suma es: ${suma}`);
+*/
+
+//Sumatoria de pares e impares
+/*
+let numeros = [12,23,18,16,19];
+let sumapar=0;
+let sumaimpar=0;
+
+for (let i=0; i<numeros.length; i++){
+    if (numeros[i] % 2 ===0){
+        sumapar += numeros[i];
+    }else {
+        sumaimpar += numeros[i];
+    }
+}
+console.log(`La suma de los números pares es: ${sumapar}`);
+console.log(`La suma de los números pares es: ${sumaimpar}`);
+*/
+//Conocer el numero mayor y menor en un arreglo
+/*
+let numeros = [12,23,18,16,19];
+let mayor=numeros[0];
+let menor=numeros[0];
+
+for (let i=1; i<numeros.length; i++){
+    if (numeros[i]>mayor){
+            mayor=numeros[i];
+    }else if (numeros[i]<menor){
+            menor=numeros[i];
+    }
+}
+console.log(`El número mayor es: ${mayor}`);
+console.log(`El número menor es: ${menor}`);
+*/
+
+//Solicitando los datos para ser ingresados por el usuario
+/*
+let num = new Array(5);
+for (let i=0; i<num.length; i++){
+    num[i]=parseInt(prompt("Ingrese el número entero"));
+}
+
+for (let i=0; i<num.length; i++){
+    console.log(`${num[i]}`);
+}
+*/
+
+//Llenando el arreglo con numeros aleatorios
+let num = new Array(5);
+for (let i=0; i<num.length; i++){
+    num[i]=Math.floor(Math.random() * 50) + 1;
+}
+
+for (let i=0; i<num.length; i++){
+    console.log(`${num[i]}`);
+}
