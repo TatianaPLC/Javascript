@@ -918,7 +918,7 @@ for (let i=0; i<num.length; i++){
 */
 //Otro Ejercicio
 //Programa que permita registrar las notas por estudiantes de clase
-
+/*
 let tamanio = parseInt(prompt("Ingrese la cantidad de estudiantes"));
 let calificaciones = new Array(tamanio);
 //let cont = 0;
@@ -931,9 +931,9 @@ for (let i=0; i<calificaciones.length; i++){
     //cont++;
     console.log(`Calificación ${i+1} : ${calificaciones[i]}`);
 }
-
+*/
 //calcular y mostrar el promedio de las calificaciones ingresadas
-
+/*
 let promedio=0;
 let suma=0;
 let mayor=0;
@@ -948,3 +948,75 @@ for (let i=0; i<calificaciones.length; i++){
 
 console.log(`El promedio de las calificaciones es de: ${promedio}`);
 console.log(`La calificación mayor es: ${mayor}`);
+*/
+
+//Objetos
+/*
+let carro1 = {
+    marca: "Ford",
+    modelo: "Fiesta",
+    color: "Rojo",
+    anio: "2018",
+    placa: "BSU281"
+}
+
+let carro2 = {
+    marca: "Renault",
+    modelo: "Logan",
+    color: "Azul",
+    anio: "2019",
+    placa: "ABV124",
+    acelerar(){
+        console.log("El carro está acelerando");
+    }
+}
+
+console.log("Datos Carro1=", carro1);
+console.log("Datos Carro1=", carro2);
+
+console.log(`La marca del vehiculo 1 es: ${carro1.marca}`);
+console.log(`La marca del vehiculo 2 es: ${carro2.marca}`);
+
+carro1.marca = "Toyota";
+carro1.color = "Gris";
+
+console.log("Los datos del vehiculo 1 son: " ,carro1);
+console.log(carro2.acelerar());
+*/
+
+//Clases, Objetos
+class persona {
+    constructor(nombre, edad){
+        this._nombre=nombre;
+        this._edad=edad;
+    }
+
+    get nombre(){
+        return this._nombre;
+    }
+
+    set nombre(nombre){
+        this._nombre = this.nombre;
+    }
+
+    get edad(){
+        return this._edad;
+    }
+
+    set edad(edad){
+        this._edad = this.edad;
+    }
+
+    saludar(){
+        console.log(`Hola soy ${this._nombre} y tengo ${this._edad} años`);
+    }
+}
+
+//Objeto de la clase persona
+const p1 = new persona("Juan", 25);
+const p2 = new persona("Rosa", 24);
+p1._nombre="Lorena";
+p2._edad=23;
+
+p1.saludar();
+p2.saludar();
