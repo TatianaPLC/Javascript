@@ -906,6 +906,7 @@ for (let i=0; i<num.length; i++){
 */
 
 //Llenando el arreglo con numeros aleatorios
+/*
 let num = new Array(5);
 for (let i=0; i<num.length; i++){
     num[i]=Math.floor(Math.random() * 50) + 1;
@@ -914,3 +915,36 @@ for (let i=0; i<num.length; i++){
 for (let i=0; i<num.length; i++){
     console.log(`${num[i]}`);
 }
+*/
+//Otro Ejercicio
+//Programa que permita registrar las notas por estudiantes de clase
+
+let tamanio = parseInt(prompt("Ingrese la cantidad de estudiantes"));
+let calificaciones = new Array(tamanio);
+//let cont = 0;
+
+for (let i=0; i<calificaciones.length; i++){
+    calificaciones[i] = parseFloat(prompt("Ingrese las notas"));
+}
+
+for (let i=0; i<calificaciones.length; i++){
+    //cont++;
+    console.log(`Calificación ${i+1} : ${calificaciones[i]}`);
+}
+
+//calcular y mostrar el promedio de las calificaciones ingresadas
+
+let promedio=0;
+let suma=0;
+let mayor=0;
+
+for (let i=0; i<calificaciones.length; i++){
+    suma +=calificaciones[i];
+    promedio = suma / tamanio;
+    if (calificaciones[i]>mayor){
+        mayor=calificaciones[i];
+    }
+}
+
+console.log(`El promedio de las calificaciones es de: ${promedio}`);
+console.log(`La calificación mayor es: ${mayor}`);
