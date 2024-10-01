@@ -985,6 +985,7 @@ console.log(carro2.acelerar());
 */
 
 //Clases, Objetos
+/*
 class persona {
     constructor(nombre, edad){
         this._nombre=nombre;
@@ -1015,8 +1016,135 @@ class persona {
 //Objeto de la clase persona
 const p1 = new persona("Juan", 25);
 const p2 = new persona("Rosa", 24);
-p1._nombre="Lorena";
-p2._edad=23;
+p1.nombre="Lorena";
+p2.edad=23;
 
 p1.saludar();
 p2.saludar();
+*/
+//Otro ejercicio
+/*
+class Libro {
+    constructor(titulo, autor, paginas){
+        this._titulo=titulo;
+        this._autor=autor;
+        this._paginas=paginas
+    }
+
+get titulo(){
+    return this._titulo;
+}
+
+set titulo(titulo) {
+    this._titulo=titulo;
+}
+
+get autor(){
+    return this._autor;
+}
+
+set autor(autor){
+    this._autor=autor;
+}
+
+get paginas(){
+    return this._paginas;
+}
+
+set paginas(paginas){
+    this._paginas=paginas;
+}
+
+    mostrarinfo(){
+        console.log(`El titulo del libro es ${this._titulo} el autor es: ${this._autor} y tiene ${this._paginas} paginas`);
+    }
+}
+
+const l1 = new Libro("El relato de un naufrago", "Pepito", "230");
+const l2 = new Libro("El principito", "Jorge", "128");
+const l3 = new Libro("El programador", "Lucia", "430");
+
+console.log(l1.titulo);
+console.log(l2.titulo);
+console.log(l3.titulo);
+
+l1.autor = "Carlos";
+l2.autor = "Pablo";
+l3.autor = "Ana";
+
+l1.mostrarinfo();
+l2.mostrarinfo();
+l3.mostrarinfo();
+*/
+
+//Otro ejercicio
+/*
+Crea una clase Producto con atributos privados nombre, precio y cantidad. Implementa los siguientes métodos:
+
+Un método para mostrar el nombre del producto.
+Un método para calcular el valor total en stock (precio * cantidad).
+Un método para modificar la cantidad del producto de forma controlada (no puede ser menor que 0).
+*/
+//Clase
+class Producto {
+    //Constructor
+    constructor(nombre, precio, cantidad) {
+        this._nombre=nombre;
+        this._precio=precio;
+        this._cantidad=cantidad;
+    }
+    //Getters y Setters
+    get nombre(){
+        return this._nombre;
+    }
+
+    set nombre(nombre){
+        this._nombre=nombre;
+    }
+
+    get precio(){
+        return this._precio;
+    }
+
+    set precio(precio){
+        this._precio=precio;
+    }
+
+    get cantidad(){
+        return this._cantidad;
+    }
+
+    set cantidad(cantidad){
+        this._cantidad=cantidad;
+    }
+
+    //Métodos
+    mostrarNombreProducto(){
+        console.log(`El nombre del producto es: ${this._nombre}, el precio es ${this._precio} y la cantidad es ${this._cantidad}`);
+    }
+
+    valorTotal(){
+        return this._precio * this._cantidad;
+    }
+
+    modificarCantidad(nuevaCantidad){
+        this._cantidad = nuevaCantidad;
+        console.log(`La nueva cantidad es: ${this._cantidad}`);
+    }
+}
+
+const pro1 = new Producto ("Mouse", 4500, 5);
+const pro2 = new Producto ("Monitor", 1453000, 3);
+
+pro1.mostrarNombreProducto();
+pro2.mostrarNombreProducto();
+
+console.log(`El valor del producto 1 es: ${pro1.valorTotal()}`);
+console.log(`El valor del producto 2 es: ${pro2.valorTotal()}`);
+
+pro1.modificarCantidad(8);
+pro2.modificarCantidad(6);
+
+pro1.mostrarNombreProducto();
+pro2.mostrarNombreProducto();
+
