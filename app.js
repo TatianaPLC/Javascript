@@ -1086,6 +1086,7 @@ Un método para calcular el valor total en stock (precio * cantidad).
 Un método para modificar la cantidad del producto de forma controlada (no puede ser menor que 0).
 */
 //Clase
+/*
 class Producto {
     //Constructor
     constructor(nombre, precio, cantidad) {
@@ -1131,20 +1132,181 @@ class Producto {
         this._cantidad = nuevaCantidad;
         console.log(`La nueva cantidad es: ${this._cantidad}`);
     }
+
+    anadirStock(nuevaCantidad){
+        return this._cantidad += nuevaCantidad;
+    }
+
+    venderStock(nuevaCantidad){
+        return this._cantidad -= nuevaCantidad;
+    }
+
+    operacion(){
+        let nCantidad;
+        nCantidad = parseInt(prompt("Ingrese la nueva cantidad"));
+        let op = parseInt(prompt("Ingrese que tipo de operación desea realizar 1. Añadir, 2. Restar"));
+        if(op==1){
+            console.log(pro3.anadirStock(nCantidad));
+        }else{
+            console.log(pro3.venderStock(nCantidad));
+        }
+    }
+
+    crearProductos(){
+        let productos;
+        let precios;
+        let cantidades;
+        productos = prompt("Ingrese el nombre del producto");
+        precios = parseFloat(prompt("Ingrese el precio del producto"));
+        cantidades = parseInt(prompt("Ingrese la cantidad de producto"));
+
+        const pro3 = new Producto(productos,precios,cantidades);
+    }
 }
 
-const pro1 = new Producto ("Mouse", 4500, 5);
-const pro2 = new Producto ("Monitor", 1453000, 3);
+const pro3 = crearProductos();
+
+
+const pro1 = new Producto("Mouse",45000,5);
+const pro2 = new Producto("Monitor", 1400000,3);
+
 
 pro1.mostrarNombreProducto();
 pro2.mostrarNombreProducto();
+pro3.mostrarNombreProducto();
 
 console.log(`El valor del producto 1 es: ${pro1.valorTotal()}`);
 console.log(`El valor del producto 2 es: ${pro2.valorTotal()}`);
+console.log(`El valor del producto 3 es: ${pro3.valorTotal()}`);
+
 
 pro1.modificarCantidad(8);
 pro2.modificarCantidad(6);
+//pro3.modificarCantidad(nCantidad);
+pro3.operacion();
+
+
 
 pro1.mostrarNombreProducto();
 pro2.mostrarNombreProducto();
+pro3.mostrarNombreProducto();
 
+*/
+
+class Producto{
+
+    constructor(nombre,precio,cantidad){
+
+        this._nombre = nombre;
+        this._precio = precio;
+        this._cantidad = cantidad
+    }
+
+
+    get nombre(){
+        return this._nombre;
+    }
+
+    set nombre(nombre){
+        this._nombre = nombre;
+    }
+
+    get precio(){
+        return this._precio;
+    }
+    set precio(precio){
+        this._precio = precio;
+    }
+
+    get cantidad(){
+        return this._cantidad;
+    }
+
+    set cantidad(cantidad){
+        this._cantidad = cantidad;
+    }
+
+
+    mostrarNombreProducto(){
+        console.log(`El nombre del producto es: ${this._nombre}, el precio es: ${this._precio} y la cantidad es: ${this._cantidad}`);
+    }
+    valorTotal(){
+      
+        return this._precio * this._cantidad;
+    }
+
+
+    modificarCantidad(nuevoCantidad){
+
+        this._cantidad = nuevoCantidad;
+
+        console.log(`La nueva cantidad es: ${this._cantidad}`)
+
+    }
+
+    anadirStock(nuevoCantidad){
+
+        return this._cantidad += nuevoCantidad;
+    }
+    venderStock(nuevoCantidad){
+        this._cantidad -= nuevoCantidad;
+    }
+
+
+    operacion(){
+        let nCantidad;
+        nCantidad = parseFloat(prompt('Ingrese la nueva cantidad'));
+
+         let op = parseInt(prompt("Ingrese que tipo de operacion desea realizar 1. Añadir 2. Restar"));
+
+         if(op===1){
+            console.log(prod3.anadirStock(nCantidad));
+    
+        }else{
+
+         console.log(prod3.venderStock(nCantidad));
+        }
+    }
+    static crearProducto(){
+        let productos; 
+        let precios; 
+        let cantidades; 
+        
+               
+        productos = prompt('Ingrese el nombre del producto');
+        precios = parseFloat(prompt('Ingrese el precio del producto'));
+        cantidades = parseFloat(prompt('Ingrese la cantidad del producto'));
+
+        return new Producto(productos, precios, cantidades);
+    }
+}
+const prod1 = new Producto("Mouse", 45000, 5);
+const prod2 = new Producto("Monitor", 1450000, 3);
+
+
+const prod3 = Producto.crearProducto();
+
+
+
+prod1.mostrarNombreProducto();
+prod2.mostrarNombreProducto();
+prod3.mostrarNombreProducto();
+console.log(` El valor del producto 1 es: ${prod1.valorTotal()}`);
+console.log(` El valor del producto 2 es: ${prod2.valorTotal()}`);
+console.log(` El valor del producto 3 es: ${prod3.valorTotal()}`);
+
+
+prod3.operacion();
+
+
+prod1.modificarCantidad(8);
+prod2.modificarCantidad(6);
+//prod3.modificarCantidad(nCantidad);
+
+
+prod1.mostrarNombreProducto();
+prod2.mostrarNombreProducto();
+prod3.mostrarNombreProducto();
+console.log(` El valor del producto 1 es: ${prod1.valorTotal()}`);
+console.log(` El valor del producto 2 es: ${prod2.valorTotal()}`);
+console.log(` El valor del producto 3 es: ${prod3.valorTotal()}`);
