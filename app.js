@@ -1087,112 +1087,6 @@ Un método para modificar la cantidad del producto de forma controlada (no puede
 */
 //Clase
 /*
-class Producto {
-    //Constructor
-    constructor(nombre, precio, cantidad) {
-        this._nombre=nombre;
-        this._precio=precio;
-        this._cantidad=cantidad;
-    }
-    //Getters y Setters
-    get nombre(){
-        return this._nombre;
-    }
-
-    set nombre(nombre){
-        this._nombre=nombre;
-    }
-
-    get precio(){
-        return this._precio;
-    }
-
-    set precio(precio){
-        this._precio=precio;
-    }
-
-    get cantidad(){
-        return this._cantidad;
-    }
-
-    set cantidad(cantidad){
-        this._cantidad=cantidad;
-    }
-
-    //Métodos
-    mostrarNombreProducto(){
-        console.log(`El nombre del producto es: ${this._nombre}, el precio es ${this._precio} y la cantidad es ${this._cantidad}`);
-    }
-
-    valorTotal(){
-        return this._precio * this._cantidad;
-    }
-
-    modificarCantidad(nuevaCantidad){
-        this._cantidad = nuevaCantidad;
-        console.log(`La nueva cantidad es: ${this._cantidad}`);
-    }
-
-    anadirStock(nuevaCantidad){
-        return this._cantidad += nuevaCantidad;
-    }
-
-    venderStock(nuevaCantidad){
-        return this._cantidad -= nuevaCantidad;
-    }
-
-    operacion(){
-        let nCantidad;
-        nCantidad = parseInt(prompt("Ingrese la nueva cantidad"));
-        let op = parseInt(prompt("Ingrese que tipo de operación desea realizar 1. Añadir, 2. Restar"));
-        if(op==1){
-            console.log(pro3.anadirStock(nCantidad));
-        }else{
-            console.log(pro3.venderStock(nCantidad));
-        }
-    }
-
-    crearProductos(){
-        let productos;
-        let precios;
-        let cantidades;
-        productos = prompt("Ingrese el nombre del producto");
-        precios = parseFloat(prompt("Ingrese el precio del producto"));
-        cantidades = parseInt(prompt("Ingrese la cantidad de producto"));
-
-        const pro3 = new Producto(productos,precios,cantidades);
-    }
-}
-
-const pro3 = crearProductos();
-
-
-const pro1 = new Producto("Mouse",45000,5);
-const pro2 = new Producto("Monitor", 1400000,3);
-
-
-pro1.mostrarNombreProducto();
-pro2.mostrarNombreProducto();
-pro3.mostrarNombreProducto();
-
-console.log(`El valor del producto 1 es: ${pro1.valorTotal()}`);
-console.log(`El valor del producto 2 es: ${pro2.valorTotal()}`);
-console.log(`El valor del producto 3 es: ${pro3.valorTotal()}`);
-
-
-pro1.modificarCantidad(8);
-pro2.modificarCantidad(6);
-//pro3.modificarCantidad(nCantidad);
-pro3.operacion();
-
-
-
-pro1.mostrarNombreProducto();
-pro2.mostrarNombreProducto();
-pro3.mostrarNombreProducto();
-
-*/
-
 class Producto{
 
     constructor(nombre,precio,cantidad){
@@ -1272,11 +1166,17 @@ class Producto{
         let precios; 
         let cantidades; 
         
-               
-        productos = prompt('Ingrese el nombre del producto');
-        precios = parseFloat(prompt('Ingrese el precio del producto'));
-        cantidades = parseFloat(prompt('Ingrese la cantidad del producto'));
+        do {
+            productos = prompt('Ingrese el nombre del producto');
+        }while(!productos)//el ! solo es una negación entonces es si no hay producto
 
+        do{
+            precios = parseFloat(prompt('Ingrese el precio del producto'));
+        }while(isNaN(precios) || precios < 0);
+
+        do{
+            cantidades = parseFloat(prompt('Ingrese la cantidad del producto'));
+        }while(isNaN(cantidades) || cantidades < 0);
         return new Producto(productos, precios, cantidades);
     }
 }
@@ -1310,3 +1210,122 @@ prod3.mostrarNombreProducto();
 console.log(` El valor del producto 1 es: ${prod1.valorTotal()}`);
 console.log(` El valor del producto 2 es: ${prod2.valorTotal()}`);
 console.log(` El valor del producto 3 es: ${prod3.valorTotal()}`);
+*/
+
+//Ejercicio de POO
+/*
+Crea una clase Termostato que tenga los atributos temperatura y estado (encendido o apagado).
+Debe tener métodos para subir la temperatura, bajar la temperatura, encender y apagar el termostato, 
+y mostrar el estado actual
+*/
+//Creando la clase
+class Termostato {
+    //Creando el constructor
+    constructor(temperatura, estado){
+        this._temperatura=temperatura;//Atributos
+        this._estado=estado;
+    }
+    //Creando el get de temperatura
+    get temperatura(){
+        return this._temperatura;
+    }
+    //Creando el set de temperatura
+    set temperatura(temperatura){
+        this._temperatura=temperatura;
+    }
+    //Creando el get de estado
+    get estado(){
+        return this._estado;
+    }
+    //Creando el set de estado
+    set estado(estado){
+        this._estado=estado;
+    }
+    //Creando el método para subir la temperatura
+    subirTemperatura(nTemp){
+        return this._temperatura += nTemp;
+    }
+    //Creando el método de bajar la temperatura
+    bajarTemperatura(nTemp){
+        return this._temperatura -= nTemp;
+    }
+    //Creando el método de encender el termostato
+    encenderTermostato(){
+        this._estado="Encendido";
+    }
+    //Creando el método de encender el termostato
+    apagarTermostato(){
+        this._estado="Apagado";
+    }
+    //Creando el método de mostrar el estado actual
+    mostrarEstadoActual(){
+        alert(`El termostato tiene la temperatura: ${term1._temperatura} y el estado: ${term1._estado}`);
+    }
+    //Crear el método para generar valores aleatorios
+    generarAleatorio(){
+        return Math.floor(Math.random() * 50) + 1; //El return regresa el valor aleatorio generado
+    }
+}
+//Añadiendo valores iniciales al termostato
+let temp = Math.floor(Math.random() * 50) + 1;
+let estado = "Apagado";
+
+//Creando el primer termostato
+const term1 = new Termostato(temp, estado);
+
+//Creando el menú interactivo - switch
+let estad=true;
+do {
+    opcion = parseInt(prompt(`¡Bienvenido al menú del termostato!, digite una de las siguientes opciones: 
+        \n 1 para visualizar el estado actual del termostato
+        \n 2 para encender el termostato
+        \n 3 para apagar el termostato
+        \n 4 para aumentar la temperatura del termostato
+        \n 5 para disminuir la temperatura del termostato
+        \n 6 Para salir`));
+
+    switch(opcion){
+        case 1:
+        term1.mostrarEstadoActual();
+        break;
+
+        case 2:
+        term1.encenderTermostato();
+        term1.mostrarEstadoActual();
+        break;
+
+        case 3:
+        term1.apagarTermostato();
+        term1.mostrarEstadoActual();
+        break;
+
+        case 4:
+        if(term1._estado=="Encendido"){
+            let temp1 = term1.generarAleatorio();
+            alert(`Se aumentará la temperatura en: ${temp1}`);
+            term1.subirTemperatura(temp1);
+            term1.mostrarEstadoActual();
+        }else{
+            alert(`El termostato debe estar encendido para poder aumentar su temperatura.`);
+        }
+        break;
+
+        case 5:
+        if(term1._estado=="Encendido"){
+            let temp2 = term1.generarAleatorio();
+            alert(`Se disminuirá la temperatura en: ${temp2}`);
+            term1.bajarTemperatura(temp2);
+            term1.mostrarEstadoActual();
+        }else{
+            alert(`El termostato debe estar encendido para poder disminuir su temperatura.`);
+        }
+        break;
+
+        case 6: alert ("Saliendo...");
+        estado = false;
+        break;
+
+        default:
+            alert ("Opción no válida")
+    }
+} while(estado);
